@@ -17,11 +17,11 @@ Capistrano::Configuration.instance(:must_exist).load do
       run "mv ~/.bashrc.tmp ~/.bashrc"
       run %q{export PATH="$HOME/.rbenv/bin:$PATH"}
       run %q{eval "$(rbenv init -)"}
-      run "rbenv #{rbenv_bootstrap}"
-      run "rbenv install #{ruby_version}"
-      run "rbenv global #{ruby_version}"
-      run "gem install bundler --no-ri --no-rdoc"
-      run "rbenv rehash"
+      # run "rbenv #{rbenv_bootstrap}"
+      # run "rbenv install #{ruby_version}"
+      # run "rbenv global #{ruby_version}"
+      # run "gem install bundler --no-ri --no-rdoc"
+      # run "rbenv rehash"
     end
     after "deploy:install", "rbenv:install"
   end
